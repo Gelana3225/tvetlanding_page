@@ -27,7 +27,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h4 className="font-label-lg text-label-lg text-on-surface mb-1">Call Us</h4>
-                  <p className="font-body-md text-body-md text-secondary">+251 XX XXX XXXX<br/>Mon-Fri, 8:00 AM - 5:00 PM</p>
+                  <p className="font-body-md text-body-md text-secondary">0573310661<br/>Mon-Fri, 8:00 AM - 5:00 PM</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
