@@ -31,16 +31,48 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Nav */}
+      {/* Mobile Nav Overlay */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-20 left-0 w-full bg-surface shadow-lg border-b border-outline-variant/30 flex flex-col p-4 animate-in slide-in-from-top-2">
-          <a className="py-3 px-4 font-label-md text-label-md text-primary font-bold border-b border-outline-variant/30" href="#" onClick={() => setIsMobileMenuOpen(false)}>Home</a>
-          <a className="py-3 px-4 font-label-md text-label-md text-secondary hover:text-primary transition-colors" href="#about" onClick={() => setIsMobileMenuOpen(false)}>About</a>
-          <a className="py-3 px-4 font-label-md text-label-md text-secondary hover:text-primary transition-colors" href="#programs" onClick={() => setIsMobileMenuOpen(false)}>Programs</a>
-          <a className="py-3 px-4 font-label-md text-label-md text-secondary hover:text-primary transition-colors" href="#gallery" onClick={() => setIsMobileMenuOpen(false)}>Gallery</a>
-          <a className="py-3 px-4 font-label-md text-label-md text-secondary hover:text-primary transition-colors" href="#contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</a>
-        </div>
+        <div 
+          className="md:hidden fixed inset-0 z-40 bg-surface-container/60 backdrop-blur-sm transition-opacity animate-in fade-in duration-300"
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
       )}
+
+      {/* Mobile Nav Drawer */}
+      <div 
+        className={`md:hidden fixed top-0 right-0 h-full w-[280px] bg-surface shadow-2xl z-50 transform transition-transform duration-500 ease-in-out ${
+          isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <div className="flex justify-end p-6">
+          <Button variant="ghost" size="icon" className="text-primary" onClick={() => setIsMobileMenuOpen(false)}>
+            <span className="material-symbols-outlined text-3xl">close</span>
+          </Button>
+        </div>
+        <div className="flex flex-col px-6 py-2 gap-4">
+          {[
+            { name: "Home", href: "#" },
+            { name: "About", href: "#about" },
+            { name: "Programs", href: "#programs" },
+            { name: "Gallery", href: "#gallery" },
+            { name: "Contact", href: "#contact" }
+          ].map((item, i) => (
+            <a 
+              key={item.name}
+              className={`text-headline-sm font-bold text-secondary hover:text-primary transition-colors border-b border-outline-variant/20 pb-4 flex items-center justify-between group ${
+                isMobileMenuOpen ? `animate-in slide-in-from-right-8 fade-in duration-500 fill-mode-both` : "opacity-0"
+              }`}
+              style={{ animationDelay: `${i * 100 + 100}ms` }}
+              href={item.href} 
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              {item.name}
+              <span className="material-symbols-outlined opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-primary">arrow_forward</span>
+            </a>
+          ))}
+        </div>
+      </div>
     </header>
   );
 }

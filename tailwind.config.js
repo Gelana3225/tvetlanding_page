@@ -104,7 +104,7 @@ export default {
           "stats-number": ["Manrope", "sans-serif"],
           "sans": ["Manrope", "sans-serif"]
       },
-      "fontSize": {
+      fontSize: {
           "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
           "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
           "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
@@ -113,6 +113,15 @@ export default {
           "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
           "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
           "stats-number": ["40px", { "lineHeight": "48px", "fontWeight": "800" }]
+      },
+      keyframes: {
+        breathe: {
+          '0%, 100%': { transform: 'scale(1.05)' },
+          '50%': { transform: 'scale(1.1)' },
+        }
+      },
+      animation: {
+        'breathe': 'breathe 6s ease-in-out infinite',
       }
     },
   },

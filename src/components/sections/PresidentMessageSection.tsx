@@ -1,16 +1,47 @@
+import { useEffect, useRef, useState } from "react";
+
 export default function PresidentMessageSection() {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="py-section-gap bg-surface">
+    <section ref={sectionRef} className="py-section-gap bg-surface overflow-hidden">
       <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="relative rounded-2xl overflow-hidden shadow-xl">
-            <img alt="Dean of Hawa Gelan TVET College" className="w-full h-auto max-h-[600px] object-cover lg:object-top" src="/dean.jpg"/>
+          <div 
+            className={`relative rounded-2xl overflow-hidden shadow-xl transition-all duration-1000 transform ${
+              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'
+            }`}
+          >
+            <img alt="Dean of Hawa Gelan TVET College" className="w-full h-auto max-h-[600px] object-cover lg:object-top transition-transform duration-1000 hover:scale-105" src="/dean.jpg"/>
           </div>
-          <div className="lg:pl-8 lg:py-8">
+          <div 
+            className={`lg:pl-8 lg:py-8 transition-all duration-1000 delay-300 transform ${
+              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'
+            }`}
+          >
             <h2 className="text-sm tracking-[0.2em] uppercase text-primary mb-4 font-semibold">
               Message from the Dean
             </h2>
-            <div className="w-12 h-1 bg-primary/30 mb-8 rounded-full"></div>
+            <div className="w-12 h-1 bg-primary/30 mb-8 rounded-full transition-all duration-1000 delay-500 origin-left" style={{ transform: isVisible ? 'scaleX(1)' : 'scaleX(0)' }}></div>
             
             <div className="space-y-6">
               <p className="text-xl md:text-2xl font-medium text-on-surface leading-snug">

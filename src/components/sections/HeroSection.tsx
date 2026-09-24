@@ -9,18 +9,18 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-t from-primary-container/90 via-primary-container/40 to-transparent"></div>
       </div>
       <div className="relative z-10 w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center text-on-primary">
-        <span className="inline-block px-4 py-1.5 mb-6 rounded-full border border-tertiary-fixed-dim text-tertiary-fixed-dim font-label-md text-label-md tracking-wider">
+        <span className="inline-block px-4 py-1.5 mb-6 rounded-full border border-tertiary-fixed-dim text-tertiary-fixed-dim font-label-md text-label-md tracking-wider animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both">
           EST. 1998
         </span>
-        <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg mb-6 max-w-4xl mx-auto leading-tight">
+        <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg mb-6 max-w-4xl mx-auto leading-tight animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200 fill-mode-both">
           Empowering Skills.<br/>
           <span className="text-tertiary-fixed-dim">Creating Opportunities.</span><br/>
           Building the Future.
         </h1>
-        <p className="font-body-lg text-body-lg mb-10 max-w-2xl mx-auto text-on-primary/90">
+        <p className="font-body-lg text-body-lg mb-10 max-w-2xl mx-auto text-on-primary/90 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-500 fill-mode-both">
           Nurturing knowledgeable, skilled, and well-disciplined citizens to drive innovation and community development across Ethiopia.
         </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-700 fill-mode-both">
           <a href="#programs" className={buttonVariants({ className: "w-full sm:w-auto bg-tertiary-fixed-dim text-tertiary font-label-md text-label-md hover:bg-tertiary-fixed transition-transform transform hover:-translate-y-1 shadow-lg py-6 px-8 rounded-lg" })}>
             Explore Programs
           </a>
