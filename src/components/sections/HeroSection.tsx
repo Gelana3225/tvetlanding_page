@@ -2,16 +2,14 @@ import { buttonVariants } from "../ui/button";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[921px] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[calc(100vh-80px)] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-cover bg-center" data-alt="A vibrant, wide-angle shot of a modern, well-lit technical workshop in an Ethiopian vocational college. Students in professional safety gear are actively engaged in hands-on learning with industrial equipment. The scene is bathed in natural light streaming through large windows, highlighting the clean, organized workspace. The color palette features deep greens, warm golds, and bright whites, conveying a sense of practical authority, progress, and professional readiness in a modern institutional setting." style={{"backgroundImage":"url('https://lh3.googleusercontent.com/aida-public/AB6AXuD8K8m01WM8FdRjOpUVU4vn7Z4ZSqzpwxgVhAleLRrYOCzXF4dmT7PBGCWa6w_vYunHS9GYl3QEA94v3BuumdxCy74CKgjokJ6FG-jQbGRZgXmQq0joItoErhdTdhV0T-bi2AAA_VwdOUy3Z9yzBT1hwYnajd_3lgtj1aqWAWdpp6fXmH5038p_LWwEAaJ4XTpQk9Ppz014JhpmnmoscnFgBQZdzF_JVtPgWGw50-wWO2BYK1RNt8siCQ')"}}></div>
         <div className="absolute inset-0 bg-primary/80 mix-blend-multiply"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-primary-container/90 via-primary-container/40 to-transparent"></div>
       </div>
       <div className="relative z-10 w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center text-on-primary">
-        <span className="inline-block px-4 py-1.5 mb-6 rounded-full border border-tertiary-fixed-dim text-tertiary-fixed-dim font-label-md text-label-md tracking-wider animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both">
-          EST. 1998
-        </span>
+
         <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg mb-6 max-w-4xl mx-auto leading-tight animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200 fill-mode-both">
           Empowering Skills.<br/>
           <span className="text-tertiary-fixed-dim">Creating Opportunities.</span><br/>
